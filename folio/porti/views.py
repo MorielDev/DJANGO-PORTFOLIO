@@ -22,4 +22,5 @@ def portfolio_detail(request, id):
 
 
 def success_page(request):
-    return render(request, 'path/to/success_template.html')
+    return render(request, 'hello/fileout.html')
+
