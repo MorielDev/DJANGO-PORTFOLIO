@@ -1,0 +1,9 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+.lin{
+    display: flex;
+    justify-content: space-between;
+    padding: 7px;
+}
