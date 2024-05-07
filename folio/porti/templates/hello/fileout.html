@@ -3,21 +3,33 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    {% extends 'index.html' %}
     {% load static%}
+    {% block head %}
     <link rel="stylesheet" href="{% static 'file/filss.css'%}">
     <title>Document</title>
 </head>
 <body>
-    {% extends 'index.html' %}
+    {% endblock %}
+
+{% block content %}
+<div>
+    <nav class="lin">
+        <ul>
+            <li>home</li>
+            <li>about</li>
+            <li>resume</li>
+            <li>portfolio</li>
+        </ul>
+    </nav>
+    <!-- Assuming you have a block to show the form results -->
     <div>
-        <nav class="lin">
-            <ul>
-                <li>home</li>
-                <li>about</li>
-                <li>resume</li>
-                <li>portfolio</li>
-            </ul>
-        </nav>
+        <h1>Portfolio Details</h1>
+        <p>Name: {{ portfolio.full_name }}</p>
+        <p>Email: {{ portfolio.email }}</p>
+        <!-- add more fields as needed -->
     </div>
+</div>
+{% endblock %}
 </body>
 </html>

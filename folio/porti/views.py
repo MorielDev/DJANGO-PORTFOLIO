@@ -19,3 +19,7 @@ def create_portfolio(request):
 def portfolio_detail(request, id):
     portfolio = get_object_or_404(Portfolio, pk=id)
     return render(request, 'hello/fileout.html', {'portfolio': portfolio})
+
+
+def success_page(request):
+    return render(request, 'path/to/success_template.html')
