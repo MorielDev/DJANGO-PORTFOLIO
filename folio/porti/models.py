@@ -49,3 +49,6 @@ class Portfolio(models.Model):
     volunteer_work = models.TextField(blank=True)
     languages_spoken = models.TextField(blank=True)
     hobbies_interests = models.TextField(blank=True)
+    
+    def __str__(self):
+        return f"{self.full_name} ({self.email})"
