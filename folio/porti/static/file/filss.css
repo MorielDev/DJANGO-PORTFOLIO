@@ -29,7 +29,7 @@ body{
     font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     text-decoration: none;
     text-transform: uppercase;
-    font-weight: lighter;
+    font-weight: 400;
 }
 .na{
     position: absolute;
@@ -37,11 +37,17 @@ body{
     font-size: 70px;
     margin-top: 150px;
     margin-left: 80px;
+    width: 120px;
+    font-weight: bold;
+    text-transform: capitalize;
 }
 .is{
     position: absolute;
+    font-weight: 200;
+    font-family:Arial, Helvetica, sans-serif;
     color: white;
+    text-transform: capitalize;
     font-size: 80px;
-    margin-top: 200px;
+    margin-top: 340px;
     margin-left: 80px;
 }

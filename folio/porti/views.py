@@ -29,6 +29,14 @@ def portfolio_detail(request, id):
 def success_page(request):
     print("Redirected to success page.")
     return render(request, 'hello/fileout.html', {'message': 'Portfolio created successfully!'})
+def about_view(request):
+    return render(request, 'hello/about.html')
+def resume(request):
+    return render(request, 'hello/resume.html')
+def fileout_view(request):
+    # Your logic here, for example, passing context to a template
+    context = {'data': 'some data'}
+    return render(request, 'hello/fileout.html', context)
 
 
 
