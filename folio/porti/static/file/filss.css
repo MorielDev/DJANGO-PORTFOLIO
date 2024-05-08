@@ -20,7 +20,7 @@ body{
     list-style: none;
     display: flex;
     gap: 30px;
-    padding-right: 30px;
+    padding-left: 30px;
     padding-top: 20px;
 }
 .k{
@@ -34,5 +34,14 @@ body{
 .na{
     position: absolute;
     color: white;
-    font-size: 40px;
+    font-size: 70px;
+    margin-top: 150px;
+    margin-left: 80px;
+}
+.is{
+    position: absolute;
+    color: white;
+    font-size: 80px;
+    margin-top: 200px;
+    margin-left: 80px;
 }
