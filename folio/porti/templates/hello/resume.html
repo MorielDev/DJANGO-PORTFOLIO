@@ -6,7 +6,7 @@
     {% block head %}
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'file/filss.css' %}">
+        <link rel="stylesheet" href="{% static 'file/style.css' %}">
         <title>Document</title>
     {% endblock %}
     
@@ -19,17 +19,27 @@
                 <li ><a class="k" href="{% url 'resume' %}">resume</a></li>
             </ul>
         </nav>
-
-        <div>
-            <h1>about</h1>
-            <h2 class="na"> {{ portfolio.full_name }}</h2>
-            <h2 class="is">{{portfolio.professional_title}}</h2>
-
-
-        </div>
-        
-
     </div>
+    
+        
+          <div>
+            <div>
+                <h2 class="na"> {{ portfolio.skills }}</h2>
+                <h2 class="na"> {{ portfolio.languages_spoken }}</h2>
+                <h2 class="na"> {{ portfolio.institutions_attended }}</h2>
+                <h2 class="na"> {{ portfolio.degrees_certifications }}</h2>
+              </div>  
+            <div>
+                <h2 class="na"> {{ portfolio.achievements }}</h2>
+                <h2 class="na"> {{ portfolio.companies_worked_at }}</h2>
+            </div>
+            <div>
+                <h2 class="na"> {{ portfolio.project_titles }}</h2>
+                <h2 class="na"> {{ portfolio.project_descriptions }}</h2>
+                <h2 class="na"> {{ portfolio.hobbies_interests }}</h2>
+            </div>
+          </div>
+    
     {% endblock %}
     
 </html>
