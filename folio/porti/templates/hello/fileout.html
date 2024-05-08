@@ -1,35 +1,33 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    {% extends 'index.html' %}
-    {% load static%}
+    {% extends 'hello/layout.html' %}
+    {% load static %}
+    
     {% block head %}
-    <link rel="stylesheet" href="{% static 'file/filss.css'%}">
-    <title>Document</title>
-</head>
-<body>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'file/filss.css' %}">
+        <title>Document</title>
     {% endblock %}
-
-{% block content %}
-<div>
-    <nav class="lin">
-        <ul>
-            <li>home</li>
-            <li>about</li>
-            <li>resume</li>
-            <li>portfolio</li>
-        </ul>
-    </nav>
-    <!-- Assuming you have a block to show the form results -->
+    
+    {% block body %}
     <div>
-        <h1>Portfolio Details</h1>
-        <p>Name: {{ portfolio.full_name }}</p>
-        <p>Email: {{ portfolio.email }}</p>
-        <!-- add more fields as needed -->
+        <nav class="lin">
+            <ul>
+                <li>home</li>
+                <li>about</li>
+                <li>resume</li>
+                <li>portfolio</li>
+            </ul>
+        </nav>
+        <!-- Assuming you have a block to show the form results -->
+        <div>
+            <h1>Portfolio Details</h1>
+            <p>Name: {{ portfolio.full_name }}</p>
+            <p>Email: {{ portfolio.email }}</p>
+            <!-- add more fields as needed -->
+        </div>
     </div>
-</div>
-{% endblock %}
-</body>
+    {% endblock %}
+    
 </html>
