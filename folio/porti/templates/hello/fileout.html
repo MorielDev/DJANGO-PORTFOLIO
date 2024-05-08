@@ -14,20 +14,18 @@
     <div>
         <nav class="lin">
             <ul class="so">
-                <li class="k">home</li>
-                <li class="k">about</li>
-                <li class="k">resume</li>
-                <li class="k">portfolio</li>
+                <li ><a class="k" href="#">home</a></li>
+                <li class="k"><a href="#">about</a></li>
+                <li class="k"><a href="#">resume</a></li>
+                <li class="k"><a href="#">portfolio</a></li>
             </ul>
         </nav>
 
         <div>
-            <h1>Portfolio Details</h1>
-            <p>Name: {{ portfolio.full_name }}</p>
-            <p>Email: {{ portfolio.email }}</p>
-            <p>phone number: {{portfolio.phone_number}}</p>
+            <p class="na"> {{ portfolio.full_name }}</p>
+            <p>{{portfolio.professional_title}}</p>
 
-            <!-- add more fields as needed -->
+
         </div>
         
 
