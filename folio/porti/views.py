@@ -1,7 +1,7 @@
-from django.shortcuts import render, redirect
+from django.shortcuts import render, redirect, get_object_or_404
 from .forms import PortfolioForm
-from django.shortcuts import render, get_object_or_404
 from .models import Portfolio
+
 # Create your views here.
 
 def create_portfolio(request):
@@ -14,30 +14,48 @@ def create_portfolio(request):
         form = PortfolioForm()
     return render(request, 'hello/index.html', {'form': form})
 
-
 def list_portfolios(request):
     portfolios = Portfolio.objects.all()
     return render(request, 'hello/fileout.html', {'portfolios': portfolios})
-
 
 def portfolio_detail(request, id):
     portfolio = get_object_or_404(Portfolio, pk=id)
     print("Portfolio fetched:", portfolio)
     return render(request, 'hello/fileout.html', {'portfolio': portfolio})
 
-
 def success_page(request):
     print("Redirected to success page.")
-    return render(request, 'hello/fileout.html', {'message': 'Portfolio created successfully!'})
+    return render(request, 'hello/success.html', {'message': 'Portfolio created successfully!'})
+
 def about_view(request):
-    return render(request, 'hello/about.html')
+    return render(request, 'hello/about.html')  # Render the about page
+
 def resume(request):
-    return render(request, 'hello/resume.html')
+    return render(request, 'hello/resume.html')  # Render the resume page
+
 def fileout_view(request):
     # Your logic here, for example, passing context to a template
     context = {'data': 'some data'}
     return render(request, 'hello/fileout.html', context)
 
+def about_view(request):
+    # Retrieve relevant data
+    # For example:
+    portfolio = Portfolio.objects.first()  # Retrieve the first portfolio object (adjust as needed)
+    # Pass data to template
+    return render(request, 'hello/about.html', {'portfolio': portfolio})
 
+def resume(request):
+    # Retrieve relevant data
+    # For example:
+    portfolios = Portfolio.objects.all()  # Retrieve all portfolio objects
+    # Pass data to template
+    return render(request, 'hello/resume.html', {'portfolios': portfolios})
 
+def fileout_view(request):
+    # Retrieve relevant data
+    # For example:
+    portfolios = Portfolio.objects.all()  # Retrieve all portfolio objects
+    # Pass data to template
+    return render(request, 'hello/fileout.html', {'portfolios': portfolios})
 
