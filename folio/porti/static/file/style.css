@@ -57,3 +57,13 @@ body{
     margin-top: 440px;
     margin-left: 80px;
 }
+.vv{
+    position: absolute;
+    color: white;
+    font-size: 30px;
+    margin-top: 5px;
+    margin-left: 230px;
+    width: 120px;
+    font-weight: lighter;
+    text-transform: capitalize;
+}

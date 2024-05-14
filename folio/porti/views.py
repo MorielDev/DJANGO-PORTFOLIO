@@ -28,7 +28,15 @@ def success_page(request):
     return render(request, 'hello/success.html', {'message': 'Portfolio created successfully!'})
 
 def about_view(request):
-    return render(request, 'hello/about.html')  # Render the about page
+    # Check if the request is coming from the 'about' URL
+    if request.path == '/about/':
+        # Retrieve data only if accessed from the 'about' URL
+        portfolio = Portfolio.objects.first()  # Adjust this to retrieve the appropriate portfolio
+        return render(request, 'hello/about.html', {'portfolio': portfolio})
+    else:
+        # If accessed from a different URL, render without data
+        return render(request, 'hello/about.html')
+
 
 def resume(request):
     return render(request, 'hello/resume.html')  # Render the resume page
