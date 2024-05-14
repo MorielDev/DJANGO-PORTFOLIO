@@ -22,32 +22,7 @@ h1{
     text-transform:uppercase;
     text-decoration: underline;
 }
-.lin{
-    display: flex;
-    justify-content: space-between;
-    position: absolute;
-    padding: 10px;
-}
-.so{
-    list-style: none;
-    display: flex;
-    gap: 30px;
-    padding-left: 30px;
-    padding-top: 20px;
-}
-.k{
-    color: white;
-    font-size: 20px;
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    text-decoration: none;
-    text-transform: uppercase;
-    font-weight: 400;
-}
-.k:hover{
-    text-decoration: underline;
-    color: rgba(199, 64, 41, 0.616);
-    transition: 1;
-}
+
 .na{
     position: absolute;
     color: white;

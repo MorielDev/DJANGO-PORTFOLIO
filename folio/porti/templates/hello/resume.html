@@ -1,45 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
-    {% extends 'hello/layout.html' %}
+<head>
     {% load static %}
-    
-    {% block head %}
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <link rel="stylesheet" href="{% static 'file/style.css' %}">
-        <title>Document</title>
-    {% endblock %}
-    
-    {% block body %}
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{% static 'file/style.css' %}">
+    <title>Resume</title>
+</head>
+<body>
     <div>
         <nav class="lin">
             <ul class="so">
-                <li ><a class="k" href="{% url 'fileout' %}">home</a></li>
-                <li ><a class="k" href="{% url 'about' %}">about</a></li>
-                <li ><a class="k" href="{% url 'resume' %}">resume</a></li>
+                <li><a class="k" href="{% url 'fileout' %}">Home</a></li>
+                <li><a class="k" href="{% url 'about' %}">About</a></li>
+                <li><a class="k" href="{% url 'resume' %}">Resume</a></li>
             </ul>
         </nav>
     </div>
-    
-        
-          <div>
-            <div>
-                <h2 class="ma"> {{ portfolio.skills }}</h2>
-                <h2 class="is"> {{ portfolio.languages_spoken }}</h2>
-                <h2 class="fd"> {{ portfolio.institutions_attended }}</h2>
-                <h2 class="vv"> {{ portfolio.degrees_certifications }}</h2>
-              </div>  
-            <div>
-                <h2 class=""> {{ portfolio.achievements }}</h2>
-                <h2 class=""> {{ portfolio.companies_worked_at }}</h2>
-            </div>
-            <div>
-                <h2 class=""> {{ portfolio.project_titles }}</h2>
-                <h2 class=""> {{ portfolio.project_descriptions }}</h2>
-                <h2 class=""> {{ portfolio.hobbies_interests }}</h2>
-            </div>
-          </div>
-    
-    {% endblock %}
-    
+
+    {% include 'hello/portfolio_details.html' %}
+
+</body>
 </html>

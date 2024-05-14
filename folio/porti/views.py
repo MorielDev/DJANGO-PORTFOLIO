@@ -28,42 +28,32 @@ def success_page(request):
     return render(request, 'hello/success.html', {'message': 'Portfolio created successfully!'})
 
 def about_view(request):
-    # Check if the request is coming from the 'about' URL
-    if request.path == '/about/':
-        # Retrieve data only if accessed from the 'about' URL
-        portfolio = Portfolio.objects.first()  # Adjust this to retrieve the appropriate portfolio
-        return render(request, 'hello/about.html', {'portfolio': portfolio})
-    else:
-        # If accessed from a different URL, render without data
-        return render(request, 'hello/about.html')
-
-
-def resume(request):
-    return render(request, 'hello/resume.html')  # Render the resume page
-
-def fileout_view(request):
-    # Your logic here, for example, passing context to a template
-    context = {'data': 'some data'}
-    return render(request, 'hello/fileout.html', context)
-
-def about_view(request):
     # Retrieve relevant data
-    # For example:
     portfolio = Portfolio.objects.first()  # Retrieve the first portfolio object (adjust as needed)
     # Pass data to template
     return render(request, 'hello/about.html', {'portfolio': portfolio})
 
 def resume(request):
     # Retrieve relevant data
-    # For example:
     portfolios = Portfolio.objects.all()  # Retrieve all portfolio objects
+    print("Number of portfolios:", len(portfolios))  # Debug statement to check the number of portfolios
+    if portfolios:  # Check if portfolios exist
+        print('yes print')  # Debug statement to indicate portfolios exist
+    else:
+        print('no print')  # Debug statement to indicate no portfolios
     # Pass data to template
     return render(request, 'hello/resume.html', {'portfolios': portfolios})
 
 def fileout_view(request):
     # Retrieve relevant data
-    # For example:
     portfolios = Portfolio.objects.all()  # Retrieve all portfolio objects
+    print("Number of portfolios in fileout_view:", len(portfolios))  # Debug statement to check the number of portfolios
+    if portfolios:  # Check if portfolios exist
+        print('yes it collects')  # Debug statement to indicate portfolios exist
+    else:
+        print('no it does not')  # Debug statement to indicate no portfolios
     # Pass data to template
     return render(request, 'hello/fileout.html', {'portfolios': portfolios})
-
+def my_view(request):
+    portfolio = Portfolio.objects.get(pk=1)  # Assuming you have a Portfolio object
+    return render(request, 'resume.html', {'portfolio': portfolio})
